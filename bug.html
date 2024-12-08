@@ -1,0 +1,16 @@
+```html
+<div class="bg-gray-300 p-4 rounded-lg">
+  <p class="text-gray-900 text-lg font-medium">This is some text.</p>
+</div>
+```
+
+This code snippet uses Tailwind CSS classes to style a div element.  However, if you have a conflicting CSS rule applied globally or within a parent element with higher specificity, the Tailwind classes might not apply as expected. This is a common issue when integrating Tailwind with existing CSS.
+
+For example, imagine there's a global stylesheet with:
+
+```css
+p {
+  color: blue;
+}
+```
+This will override the `text-gray-900` class in your Tailwind CSS unless you use `!important`, which is generally discouraged.
