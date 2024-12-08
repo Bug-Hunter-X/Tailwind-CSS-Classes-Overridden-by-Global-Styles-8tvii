@@ -1,0 +1,20 @@
+To solve this, you have two main options:
+
+1. **Increase the specificity of your Tailwind classes:**  This is generally the preferred approach. You could add a more specific parent selector to your Tailwind classes or modify the global stylesheet.
+
+2. **Use the `!important` flag (use cautiously):**  Add `!important` to your Tailwind CSS classes to forcefully apply them, overriding any other rules.  However, using `!important` can make your CSS harder to maintain in the long run, and should be avoided unless absolutely necessary.
+
+Here's a possible `solution.css` file showing both options:
+
+```css
+/* Option 1: Adjust global style to be less specific */
+.container p {
+  color: blue !important; /*Only affects paragraphs inside container*/
+}
+
+/* Option 2: Use !important (use sparingly!) */
+.bg-gray-300 p {
+  color: gray-900 !important;
+}
+```
+This solution adjusts the global style to be less specific, thereby allowing Tailwind to take precedence.  The `!important` example should only be used as a last resort.
